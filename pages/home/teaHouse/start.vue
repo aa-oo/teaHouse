@@ -19,18 +19,18 @@
 								<view class="mid">
 									<image class="primary" :src="item.image_src" />
 									<view class="side">
-										<view class="namClass"><text class="name">容器默认存在两根轴交叉轴的开始位置叫做cross start，结束位置叫做cross end</text></view>
+										<view class="namClass"><text class="name">{{teadetail | fontNumber}}</text></view>
 										<!-- <text class="address">{{ item.goods_id }}</text> -->
 									</view>
 								</view>
 								<view class="bot">
 									<text>已收到</text>
 									<text class="bottext" style="border-bottom:1px solid #81B991 ;color: #81B991;">3000</text>
-									<text class="bottext">,来自</text>
+									<text class="bottext"><span>&yen</span>，来自</text>
 									<text class="bottext" style="border-bottom:1px solid #81B991 ;color: #81B991;">4</text>
 									<text class="bottext">茶友</text>
 									<!-- 已收到<text class="bottext">3000</text>,来自<text class="bottext">4</text>茶友 -->
-									<text class="botbtn" @click="addtea">+加入茶桌</text>
+									<text class="botbtn" @click="addtea" >+加入茶桌</text>
 								</view>
 							</view>
 						</view>
@@ -84,6 +84,7 @@ export default {
 	data() {
 		return {
 			title: 1,
+			teadetail:'wikimedia是一项全球运动，其使命是将免费的教育内容带给世界。wikimedia是一项全球运动，其使命是将免费的教育内容带给世界。',
 			productList: [],
 			tabs: ['茶屋', '名片', '文章'],
 			tab_current: 0,
@@ -130,7 +131,20 @@ export default {
 			})
 		}
 		
+	},
+filters: {
+	fontNumber (date) {
+	  const length = date.length
+	  if (length > 50) {
+	    var str = ''
+	    str = date.substring(0, 50) + '...'
+	    return str
+	  } else {
+	    return date
+	  }
 	}
+  },
+  
 };
 </script>
 <style>

@@ -86,7 +86,7 @@
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "创客茶馆",
 		"navigationBarBackgroundColor": "#81b991",
 		"backgroundColor": "#81b991"
 		// "navigationStyle": "custom"
