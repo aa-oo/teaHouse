@@ -43,18 +43,18 @@
 						<view class="box1" style="height:300rpx ;margin-top: 45rpx;position: relative" >
 							<view class="buscardright"><image class="buscardImg" :src="item.image_src" /></view>
 							<view class="buscardleft">
-								<view class="context">
-									<text class="" style=" border-bottom: 1px solid #81B991;" @click="gobusCard">Easter</text>
-									<text class="titletext">上海</text>
-									<image class="buscardicon" src="../../../static/icon/nv.png" />
+								<view class="context1">
+									<text class="" style=" border-bottom: 1px solid #81B991;font-size:22px;" @click="gobusCard">Easter</text>
+									<text class="titletext" style="font-size:16px;padding:0.1px 10px;">上海</text>
+									<image class="buscardicon" src="../../../static/icon/nv1.png" />
 								</view>
 								<view class="context">
-									<image class="buscardicon" style="margin-left: 0;" src="../../../static/icon/nv.png" />
-									<text class="titletext">:国家电网公司</text>
+									<image class="buscardicon" style="margin-left: 0;" src="../../../static/icon/company.png" />
+									<text class="titletext"style="font-size:16px;">国家电网公司</text>
 								</view>
-								<view class="context"><text class="titletext" style="margin-left: 0;">行业:电子商务</text></view>
-								<view class="context">
-									<text class="titletext" style="margin-left: 0;">需求:每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</text>
+								<view class="context"><text class="titletext" style="margin-left: 0;">行业：电子商务</text></view>
+								<view class="context2">
+									<text class="titletext" style="margin-left: 0;">需求：<span>{{xuqiu | fontxuqiu}}</span></text>
 								</view>
 							</view>
 						</view>
@@ -65,7 +65,7 @@
 				<view class="titlebox">
 					<view class="titletop">
 						<input class="titleinput" type="text" placeholder="" />
-						<image class="titleicon" style="" src="../../../static/icon/nv.png" />
+						<image class="titleicon" style="" src="../../../static/icon/search.png" />
 					</view>
 					<card class="titlecard"></card>
 				</view>
@@ -85,6 +85,7 @@ export default {
 		return {
 			title: 1,
 			teadetail:'wikimedia是一项全球运动，其使命是将免费的教育内容带给世界。wikimedia是一项全球运动，其使命是将免费的教育内容带给世界。',
+			xuqiu:'每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。边框的间隔大一倍。',
 			productList: [],
 			tabs: ['茶屋', '名片', '文章'],
 			tab_current: 0,
@@ -138,6 +139,16 @@ filters: {
 	  if (length > 50) {
 	    var str = ''
 	    str = date.substring(0, 50) + '...'
+	    return str
+	  } else {
+	    return date
+	  }
+	},
+	fontxuqiu (date) {
+	  const length = date.length
+	  if (length > 38) {
+	    var str = ''
+	    str = date.substring(0, 38) + '...'
 	    return str
 	  } else {
 	    return date
